@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>INTELLIJ</appname>
+    <equal>com.jetbrains.intellij</equal>
+  </appdef>
+  <appdef>
+    <appname>WEBSTORM</appname>
+    <equal>com.jetbrains.WebStorm</equal>
+  </appdef>
+  <appdef>
+    <appname>ATOM</appname>
+    <equal>com.github.atom</equal>
+  </appdef>
+  <!-- Do not toggle "ubiquitous vim" in these IDEs -->
+  <item>
+    <name>Real ctrl-[ in IDEs</name>
+    <identifier>intellij.escape</identifier>
+    <only>INTELLIJ, WEBSTORM, ATOM</only>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::CONTROL_L, KeyCode::ESCAPE</autogen>
+  </item>
+  <!-- Remap cmd-esc to cmd-backtick for app-specific cycling -->
+  <item>
+    <name>Cmd-ESC to cycle in-app</name>
+    <identifier>globalSetting.cmdescswitch</identifier>
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::COMMAND_L, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
+  </item>
+  <!-- Remap shift-cmd-esc to shift-cmd-backtick for app-specific REVERSE cycling -->
+  <item>
+    <name>Shift-Cmd-ESC to reverse cycle in-app</name>
+    <identifier>globalSetting.shiftcmdescswitch</identifier>
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_R</autogen>
+  </item>
+  <!-- Remap ctrl-ponding arrow key -->
+  <item>
+    <name>ctrl-[h,j,k,l] to arrow keys</name>
+    <identifier>globalSetting.ctrlVimToArrows</identifier>
+    <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::CONTROL_L, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP</autogen>
+  </item>
+  <!-- Global Spotify keyboard shortcuts -->
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_spotify_playpause</name>
+    <url type="shell">
+      <![CDATA[    osascript -e 'tell application "Spotify" to playpause'    ]]>
+</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_spotify_next</name>
+    <url type="shell">
+      <![CDATA[    osascript -e 'tell application "Spotify" to next track'    ]]>
+</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_spotify_previous</name>
+    <url type="shell">
+      <![CDATA[    osascript -e 'tell application "Spotify" to previous track'    ]]>
+</url>
+  </vkopenurldef>
+  <item>
+    <name>ctrl-cmd-[j,h,l] to control spotify</name>
+    <identifier>globalSetting.spotifyControls</identifier>
+    <!-- play/pause -->
+    <autogen>__SimultaneousKeyPresses__ @begin KeyCode::J, ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L, @end @begin KeyCode::VK_OPEN_URL_spotify_playpause @end</autogen>
+    <!-- next -->
+    <autogen>__SimultaneousKeyPresses__ @begin KeyCode::L, ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L, @end @begin KeyCode::VK_OPEN_URL_spotify_next @end</autogen>
+    <!-- prev -->
+    <autogen>__SimultaneousKeyPresses__ @begin KeyCode::H, ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L, @end @begin KeyCode::VK_OPEN_URL_spotify_previous @end</autogen>
+  </item>
+</root>
