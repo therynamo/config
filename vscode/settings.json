@@ -1,0 +1,31 @@
+{
+  "window.commandCenter": true,
+  "editor.tabSize": 2,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "editor.hover.above": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.useSystemClipboard": true,
+  "editor.accessibilitySupport": "off",
+  "editor.guides.bracketPairs": true,
+  "workbench.preferredDarkColorTheme": "Shades of Purple",
+  "markdown.experimental.validate.enabled": true,
+  "markdown.experimental.validate.fileLinks.markdownFragmentLinks": "warning",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.maxTokenizationLineLength": 200000,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml"
+  },
+  "redhat.telemetry.enabled": false,
+  "remote.SSH.remotePlatform": {},
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+  "workbench.editorAssociations": {
+    "*.patch": "default"
+  }
+}

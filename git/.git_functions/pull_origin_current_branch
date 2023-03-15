@@ -1,0 +1,6 @@
+#!/bin/bash
+fn() {
+	branch=$(git branch --show-current)
+
+	git pull --rebase origin $branch
+}

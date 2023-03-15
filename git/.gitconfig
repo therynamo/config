@@ -1,0 +1,47 @@
+[user]
+	email = theryn.groetken@gemini.com
+	name = Theryn Groetken
+	signingkey = 3445252FC0C8CDE2
+[alias]
+  s = status
+  d = diff
+  pr = pull --rebase
+  pro = !bash -c 'source $HOME/.git_functions/pull_origin_current_branch && fn'
+  ba = branch -a
+  bd = branch -d
+  co = checkout
+  pn = push --no-verify
+  cb = checkout -b
+  la = "!git config -l | grep alias | cut -c 7-"
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  sd = stash list --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  sl = !bash -c 'git stash show -u stash@{$1}' --
+  dlc = diff --cached HEAD^
+  bl = branch --list
+  clear = stash --keep-index --include-untracked
+  lsa = log --graph --all --decorate --oneline
+  sh = stash
+  sa = stash apply
+  pff = push
+  pu=!bash -c 'source $HOME/.git_functions/push_current_branch && fn'
+  pun=!bash -c 'source $HOME/.git_functions/push_current_no_verify && fn'
+  punt=!bash -c 'source $HOME/.git_functions/force_push && fn'
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[push]
+	autoSetupRemote = true
